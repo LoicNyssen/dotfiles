@@ -32,7 +32,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output eDP-1 bg /home/loic/Pictures/Wallpapers/begs/09.jpg fill
+output eDP-1 bg /home/loic/Pictures/Wallpapers/begs/09.jpg fill
 output 'Dell Inc. DELL P2419H 14B6P33' bg /home/loic/Pictures/Wallpapers/begs/09.jpg fill
 output 'Unknown KALED35UWLB 000' bg /home/loic/Pictures/Wallpapers/begs/05.png fill
 output 'Unknown 24G2W1G4 0x00000557' bg /home/loic/Pictures/Wallpapers/wallpaper_vert.jpg fill
@@ -193,6 +193,10 @@ output 'Unknown 24G2W1G4 0x00000557' bg /home/loic/Pictures/Wallpapers/wallpaper
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
+
+## autostart ###################################################################
+  exec --no-startup-id nextcloud
+  exec_always pkill kanshi; exec kanshi
 #
 # Resizing containers:
 #
@@ -244,3 +248,5 @@ bar {
 }
 
 include /etc/sway/config.d/*
+
+
